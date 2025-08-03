@@ -92,6 +92,10 @@ public class LevelManager : MonoBehaviour
     }
     private void Start()
     {
+        if (CoreGameSignals.Instance == null)
+        {
+            Debug.Log("Intance is null");
+        }
         CoreGameSignals.Instance.onLevelInitialize?.Invoke((byte)(_currentLevel % _totalLevelCount));
         //UISignals
     }

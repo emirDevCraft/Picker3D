@@ -3,12 +3,12 @@ using UnityEngine;
 public class OnLevelDestroyerCommand
 {
     private Transform _levelHolder;
-    public OnLevelDestroyerCommand(Transform levelHolder)
+    internal OnLevelDestroyerCommand(Transform levelHolder)
     {
         _levelHolder = levelHolder;
     }
 
-    public void Execute()
+    internal void Execute()
     {
         if (_levelHolder.childCount <= 0) return;
         Object.Destroy(_levelHolder.GetChild(0).gameObject);
